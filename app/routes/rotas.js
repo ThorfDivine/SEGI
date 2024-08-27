@@ -10,8 +10,7 @@ module.exports = function (app) {
             function(err, results)
             {
                 response.render('clientes', {lista:results}); 
-            }
-        )
+            })
       
         connection.end();
     });*/
@@ -30,6 +29,8 @@ module.exports = function (app) {
           clientesBanco.salva(cliente, function (err, results) {
             response.redirect("/clientes");
           });
+          
+        connection.end();
         });
       
    
@@ -44,6 +45,8 @@ module.exports = function (app) {
           clientesBanco.apaga(id, function (err, results) {
             response.render("/clientes/exclusao");
           });
+          
+          connection.end();
         });
       
    
@@ -115,7 +118,7 @@ module.exports = function (app) {
             else{
                 request.session.usuario ={
                        nome: usuario.nome, 
-                       serio: usuario.serie,
+                       serie: usuario.serie,
                        rm: usuario.rm,
                        email: usuario.email,
                        tipo: "aluno"
@@ -126,6 +129,8 @@ module.exports = function (app) {
             response.redirect("/HomeAlunos"); // Redireciona para a página desejada
         }
     });
+       
+        connection.end();
 });
 /*-----------------------------paginas que precisam de login--------------------------*/
     
