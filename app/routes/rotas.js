@@ -58,7 +58,7 @@ module.exports = function (app) {
         }
     } 
 
-    
+/*------------------ paginas bases que não precisam de login ------------------------------*/
   app.get('/', function (request, response) {
        response.render('index');               
    });
@@ -83,15 +83,6 @@ module.exports = function (app) {
   app.get('/HomeAluno', function (request, response) {
       response.render('HomeAluno');               
    });
-
-    // exemplo de paginas na quais precisam estar logadas
-    /*
-        app.get('/cadastro', verificaAutenticacao, function (request, response) {
-               
-              response.render('cadastro', {usuario: resquest.session.usuario});               
-           });
-    */
-
     
    //---------------------login----------------------//
    app.post("/login", function (request, response) {
@@ -136,5 +127,15 @@ module.exports = function (app) {
         }
     });
 });
+/*-----------------------------paginas que precisam de login--------------------------*/
+    
+   // exemplo para paginas na quais precisam estar logadas
+    /*
+        app.get('/cadastro', verificaAutenticacao, function (request, response) {
+               
+              response.render('cadastro', {usuario: resquest.session.usuario});               
+           });
+    */
 
+    
 }
