@@ -1,0 +1,32 @@
+
+    /* -------------------------------------- THE TANANAN CSS -------------------------------------- */
+
+/* + FONTS + */
+
+    /*  NAME <-- / -->  @IMPORT */
+
+
+/* + VARIABLES + */
+:root{
+    /* FONTS_ */
+
+    /* COLORS */
+
+    /* SIZES */
+
+    /* SHADOWS */
+}
+
+/* >> ELEMENTS << */
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--M_Plus);
+  }
+
+/* >> CLASSES ['.'] << */
+
+
+/* >> IDS ['#'] << */
+
