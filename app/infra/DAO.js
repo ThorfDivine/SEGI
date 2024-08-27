@@ -9,9 +9,9 @@ function DAO(connection){
 DAO.prototype.listarClientes=function(callback){
   this._connection.query('select * from clientes', callback);
 }
-
+// exemplo de exclusao de algo do banco de dados
 DAO.prototype.removeProduto=function(id, callback){
-  this._connection.query('delete from ... where id = "'+id+'"',   callback)
+  this._connection.query('delete from ... where id = ?', id, callback)
 }
 
 module.exports = function (){
