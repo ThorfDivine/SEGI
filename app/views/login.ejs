@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="./CSS/style.css">
+    <link rel="stylesheet" href="./CSS/login.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SEGI</title>
+</head>
+<body>
+  <div id="grad1">
+    <div id="grad2">
+      <script src="./JS/backToTop.js"></script>
+      <section class="flexR centralize">
+        <div class="conteiner_card flexC centralize">
+          <div class="card_form">
+            <form method="POST" action="/login" class="flexC wrapFalse">
+
+              <div class="dados flexC justfyC">
+                <div class="flexR wrapFalse">
+                  <div class="dataDiv">
+                    <lable for="rm K2D">RM</lable>
+                  </div>
+                  <div class="dataDiv">
+                    <input type="text" name="rm" id="rm" placeholder="Ex: 22459" class="input" required>
+                  </div>
+                </div>
+                <div class="flexR wrapFalse">
+                  <div class="dataDiv">
+                    <lable for="pass K2D">SENHA</lable>
+                  </div>
+                  <div class="dataDiv">
+                    <input type="password" name="senha" id="pass" placeholder="Ex: *****" class="input" required>
+                      <span id="eye" class="eye material-symbols-outlined pass">visibility</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="conteiner_actions flexC centralize">
+                <div id="btnLog">
+                  <input type="submit" id="login" class="btn K2D" value="L O G I N" >
+                  <!-- !!!!! -->
+                      <!-- CRIAR LÓGICA DE LOGIN -->
+                  <!-- !!!!! -->
+                </div>
+                <div id="back_ini">
+                  <a id="index" href="/"><p><i>VOLTAR PARA A PÁGINA INICIAL</i></p></a>
+                </div>
+              </div>
+
+            </form>
+          </div>
+        </div>
+      </section>
+      <footer>
+        <div class="ForTitle">
+            <h2>SEGI <i>since 2024 ©</i></h2>
+        </div>
+        <div class="links">
+            <ul>
+                <li>
+                  <a href='/ERP'       class="JOST goTo">Sobre</a>
+                  <a href='/quemSomos' class="JOST goTo">Contato</a>
+                  <a href='/direitos'  class="JOST goTo">Direitos</a>
+                  <a href='/quemSomos' class="JOST goTo">Quem Somos</a>
+                </li>
+            </ul>
+        </div>
+      </footer>
+      <!-- END BACKGROUND -->
+    </div>
+  </div>
+    <!-- BODY_HTML -->
+</body>
+    <script src="./JS/eye.js"></script>
+</html>

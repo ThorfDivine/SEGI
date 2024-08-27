@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Lista</title>
+    </head>
+    <body>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Endereco</th>
+                <th>Cidade</th>
+                <th>Estado</th>
+            </tr>
+            <%for(var i=0;i<lista.length;i++){%>
+            <tr>
+                <td><%=lista[i].id%></td>
+                <td><%=lista[i].Nome%></td>
+                <td><%=lista[i].Endereco%></td>
+                <td><%=lista[i].Cidade%></td>                
+                <td><%=lista[i].Estado%></td>
+            </tr>
+            <%}%>
+        </table>
+    </body>
+</html>
