@@ -1,0 +1,181 @@
+DROP DATABASE if EXISTS SEGI;
+CREATE DATABASE SEGI ;
+USE SEGI;
+
+CREATE TABLE Professores (
+  nome VARCHAR(120),
+  materia VARCHAR(30),
+  rm VARCHAR(5) PRIMARY KEY,
+  email VARCHAR(120),
+  senha VARCHAR(20)
+);
+
+INSERT INTO Professores VALUES ( "bartoAdmin", "desenvolvedor", "00000", "bartoadmin@etec.sp.gov.br", "00000BartoAdmiN$$");
+
+CREATE TABLE Alunos (
+  professor_responsavel_rm VARCHAR(5),
+  nome VARCHAR(120),
+  serie VARCHAR(30),
+  rm VARCHAR(5) PRIMARY KEY,
+  email VARCHAR(120),
+  senha VARCHAR(20),
+
+  FOREIGN KEY (professor_responsavel_rm) REFERENCES Professores(rm)
+);
+
+
+CREATE TABLE Funcionarios (
+  aluno_responsavel_rm VARCHAR(5),
+
+  numero_de_matricula INT primary key NOT NULL AUTO_INCREMENT,
+  nome_do_empregado VARCHAR(110),
+
+  endereço VARCHAR(150),
+  bairro VARCHAR(50),
+  cidade VARCHAR(110),
+  cep VARCHAR(9),
+
+  numero_de_ordem VARCHAR(30), 
+
+  pai VARCHAR(150),
+  mae VARCHAR(150),
+  nacionalidade_pai VARCHAR(30),
+  nacionalidade_mae VARCHAR(30),
+
+  data_de_nascimento DATE,
+  nacionalidade VARCHAR(30),
+  estado_civil VARCHAR(20),
+  local_de_nascimento VARCHAR(100),
+  fotografia TEXT,
+  carteira_de_identidade VARCHAR(30),
+  carteira_profissional VARCHAR(30),	
+  serie VARCHAR(30), 
+  carteira_reservista VARCHAR(30),
+  categoria VARCHAR(30), 
+  cpf VARCHAR(20),
+  titulo_de_eleitor varchar(20),
+  carteira_modelo VARCHAR(30),
+  naturalizado int,
+
+  cor varchar(20),
+  altura double,
+  peso double,
+  cabelos VARCHAR(30),
+  olhos VARCHAR(30), 
+  sinais VARCHAR(30), 
+
+  data_de_admissao DATE, 
+  cargo VARCHAR(30),
+  secao VARCHAR(30), 
+  salario_inicial DOUBLE,
+  comissao DOUBLE,
+  tarefa VARCHAR(150), 
+  forma_de_pagamento VARCHAR(50),
+
+  horario_de_entrada TIME, 
+  horario_de_saida TIME, 
+  horario_de_refeicao VARCHAR(13), 
+  descanso_semanal VARCHAR(20), 
+
+  codigo_banco VARCHAR(30), 
+  codigo_agencia VARCHAR(30), 
+
+  pis_cadastrado_em VARCHAR(30), 
+  pis_sob_numero VARCHAR(30), 
+  pis_dep_banco VARCHAR(30), 
+  pis_endereco VARCHAR(30), 
+
+  FOREIGN KEY (aluno_responsavel_rm) REFERENCES Alunos(rm)
+
+);
+
+CREATE TABLE Exames_medicos(
+  id_empregado INT,
+  id_exame INT PRIMARY KEY,
+  exame TEXT,
+
+   FOREIGN KEY(id_empregado) REFERENCES Funcionarios(numero_de_matricula)
+);
+
+CREATE TABLE Beneficiarios_do_Funcionario(
+  id_empregado INT,
+  id_beneficiario INT PRIMARY KEY AUTO_INCREMENT,
+  nome varchar(50),
+  parentesco VARCHAR(40),
+  data_de_nascimento DATE,
+
+   FOREIGN KEY (id_empregado) REFERENCES Funcionarios(numero_de_matricula)
+);
+
+CREATE TABLE Dados_Estrangeiro(
+  id_empregado INT PRIMARY key,
+  data_de_chegada_no_brasil DATE,
+  casado_com_brasileira INT,
+  nome_do_conjugue VARCHAR(100),
+  quantos_filhos_brasileiros INT,
+  numero_de_registro_geral VARCHAR(50),
+
+   FOREIGN KEY (id_empregado) REFERENCES Funcionarios(numero_de_matricula)	
+);
+
+CREATE TABLE Categorias (
+id INT PRIMARY KEY AUTO_INCREMENT,
+nome VARCHAR(70)
+);
+
+CREATE TABLE Naturezas (
+id INT PRIMARY KEY AUTO_INCREMENT,
+nome VARCHAR(70),
+descricao VARCHAR(100)
+);
+
+CREATE TABLE Fornecedores(
+  aluno_responsavel_rm VARCHAR(5),
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  nome VARCHAR(100),
+  categoria INT,
+  natureza INT,
+
+   FOREIGN KEY (categoria) REFERENCES Categorias(id),
+   FOREIGN KEY (Natureza) REFERENCES Naturezas(id),	
+  FOREIGN KEY (aluno_responsavel_rm) REFERENCES Alunos(rm)	
+);
+
+CREATE TABLE Produtos(
+  aluno_responsavel_rm VARCHAR(5),
+
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  data_de_criacao DATE,
+  categoria INT,
+  nome VARCHAR(40),
+  descricao VARCHAR(100),
+  natureza INT,
+  quantidade INT,
+  valor DOUBLE,
+  estoque INT,
+  estoque_maximo INT,
+
+   FOREIGN KEY (categoria) REFERENCES Categorias(id),
+   FOREIGN KEY (Natureza) REFERENCES Naturezas(id),	
+  FOREIGN KEY (aluno_responsavel_rm) REFERENCES Alunos(rm)	
+); 
+
+CREATE TABLE Compras (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  data_de_compra DATE,
+  quantidade INT,
+  produto INT,
+  valor_total DOUBLE,
+
+   FOREIGN KEY (produto) REFERENCES Produtos(id)			
+);
+CREATE TABLE Vendas (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  data_de_compra DATE,
+  quantidade INT,
+  produto INT,
+  valor_total DOUBLE,
+
+   FOREIGN KEY (produto) REFERENCES Produtos(id)			
+);
+
