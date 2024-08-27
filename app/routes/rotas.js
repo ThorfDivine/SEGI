@@ -34,6 +34,20 @@ module.exports = function (app) {
       
    
    */
+    /*
+      exemplo apagar cliente com parte do routes
+
+      app.get("/clientes/:id", function (request, response) {
+          var id = request.params.id;   
+          var connection = app.infra.connectionFactory();
+          var clientesBanco = new app.infra.ClientesDAO(connection);
+          clientesBanco.apaga(id, function (err, results) {
+            response.render("/clientes/exclusao");
+          });
+        });
+      
+   
+   */
     //middleware responsavel por verificar se a pessoa esta devidamente logada
     function verificaAutenticacao(request, response, next) {
         if(request.session.usuario){
