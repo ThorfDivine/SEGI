@@ -1,0 +1,97 @@
+
+    /* -------------------------------------- THE HOME CSS -------------------------------------- */
+
+/* + FONTS + */
+
+    /*  NAME <-- / -->  @IMPORT */
+
+
+/* + VARIABLES + */
+:root{
+    /* FONTS_ */
+
+    /* COLORS */
+
+    /* SIZES */
+        --HEADER_HEIGHT: 10vh;
+
+    /* SHADOWS */
+}
+
+/* >> ELEMENTS << */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+section{
+  height: 86.4vh;
+}
+
+/* >> CLASSES ['.'] << */
+.box{
+  width: 48%;
+  height: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.box:nth-child(1){
+  justify-content: flex-start;
+    a{
+      text-shadow: var(--LOGOsdw);
+      margin-left: calc(15vw - 50px);
+      color: var(--WHITE) !important;
+    }
+}
+
+.btn{
+  width: 27%;
+  height: 45%;
+}
+
+.content, .login{
+  height: 53%;
+  margin-top: 7.20%;
+  font-family: var(--K2D);
+}
+.login{
+  width: 36%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+    .btn{
+      width: 72%;
+      height: 15%;
+      font-weight: 600;
+      font-size: 1.6rem;
+    }
+      .btn:hover{
+          box-shadow: var(--BTNsdw2);
+          text-shadow: var(--BTNsdw3);
+          background-color: var(--LIGHTGRAY);
+      }
+}
+.content{
+  width: 53%;
+  padding-left: 2%;
+  border: 2.5px solid black;
+
+    div{
+      color: var(--WHITE) !important;
+    }
+      .contentTitle{
+        margin-top: 6%;
+        font-size: 3.4rem;
+        text-shadow: var(--LOGOsdw2)
+      }
+    .contentTxt{
+      margin-top: 3%;
+      margin-left: 4%;
+    }
+}
+
+/* >> IDS ['#'] << */
+

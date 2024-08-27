@@ -1,0 +1,93 @@
+
+    /* -------------------------------------- THE RIGHTS CSS -------------------------------------- */
+
+/* + FONTS + */
+
+
+/* + VARIABLES + */
+:root{
+    /* FONTS_ */
+
+    /* COLORS */
+    --blak3: rgb(3,3,3);
+    /* SIZES */
+
+    /* SHADOWS */
+
+    /* PLACES */
+    --positions: 2;    
+}
+
+/* >> ELEMENTS << */
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--M_Plus);
+  }
+  header{
+      height: 10vh;
+      font-size: 1rem;
+      justify-content: space-between;
+      *{
+          color: var(--WHITE);
+      }
+      .box{
+          margin: 0 4vw;
+      }
+  }
+
+  section{
+    min-height: 100vh;
+    display: flex;
+  }
+
+
+/* >> CLASSES ['.'] << */
+
+.fakeScroll{
+    position: relative;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 94%;
+    height: 1px;
+    min-height: 90%;
+    margin-top: 3vh;
+    margin-left: 1.5vw;
+    border-radius: .3rem 0 0 .3rem;
+    border: 2px solid rgb(43, 43, 43);
+    background: rgba(76, 54, 83, 0.495);
+}
+
+.container{
+    width: 67%;
+    height: 18vh;
+    padding: 1rem;
+    margin: 1.3rem 0;
+    min-height: 12vh;
+    font-size: 1.2rem;
+    visibility: hidden;
+    padding: 10px 15px;
+    color: var(--WHITE);
+    border-radius: 1.4rem;
+    background: linear-gradient(
+      80deg,
+      rgba(180, 180, 180, 0.3) 43%,
+      rgba(30, 30, 30, 0.3) 75%
+    );
+   }
+   .container:nth-child(even){
+        align-self: flex-end;
+   }
+
+   .bar{
+      width: 20px;
+      height: 90%;
+      margin-top: 3vh;
+      border: 2px solid rgb(43, 43, 43);
+      background-color: rgb(110, 110, 110);
+   }
+
+/* >> IDS ['#'] << */
+

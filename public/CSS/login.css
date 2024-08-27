@@ -1,0 +1,126 @@
+
+    /* -------------------------------------- THE LOGIN CSS -------------------------------------- */
+
+/* + FONTS + */
+
+/* + VARIABLES + */
+:root{
+    /* FONTS_ */
+
+    /* COLORS */
+
+    /* SIZES */
+        --2rem: 2rem;
+    /* SHADOWS */
+}
+
+/* >> ELEMENTS << */
+  section{
+    width: 100%;
+    height: 93vh;
+  }
+  form{
+    width: 100%;
+    height: 100%;
+    padding: 15px;
+  }
+/* >> CLASSES ['.'] << */
+.conteiner_card{
+  width: 43%;
+  height: 85%;
+  background: linear-gradient(
+                35deg,
+                #fa8e2a 17%,
+                #6101ac 53%
+              ) padding-box,
+              linear-gradient(
+                112deg,
+                #590090,
+                #FE6B00
+              )border-box;
+  border-radius: 1em;
+  border: 2px solid transparent;
+  .card_form{
+    width: 96%;
+    height: 96%;
+    border: 4px solid var(--BLACK);
+    border-radius: 1em;
+  }
+  a{
+    color: var(--WHITE);
+    /* font-family: var(--K2D); */
+    text-decoration: underline;
+    transition: .32s ease-out;
+  }a:hover{
+    color: var(--PINK);
+  }
+}
+
+.dados{
+  width: 100%;
+  height: 60%;
+}
+.dataDiv{
+  width: 50%;
+  height: 50%;
+  display: grid;
+  justify-content: center;
+    lable{
+        display: flex;
+        align-self: center;
+        font-size: 1.48rem;
+        color: var(--WHITE);
+    }
+    .input{
+        border: none;
+        padding: 0px 8px;
+        border-radius: 1.4em;
+        color: var(--ORANGE2);
+        background-color: var(--LIGHTGRAY);
+    }
+}
+.dataDiv:nth-child(1), .dataDiv:nth-child(2){
+  margin-bottom: 8%;
+}
+
+.conteiner_actions{
+    height: 20vh;
+  div{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  #btnLog{
+    height: 50%;
+    padding-bottom: 2px;
+    align-items: flex-end;
+        input[type='button']{
+            width: 70%;
+            height: 55%;
+            display: flex;
+            font-size: 1.5rem;
+            justify-content: center;
+        }
+  }
+}
+/* >> IDS ['#'] << */
+#index{
+    font-size: .45rem;
+}
+
+#eye{
+    cursor: pointer;
+    font-size: 1.2rem;
+    position: absolute;
+    align-self: center;
+    color: var(--DARKGRAY);
+    justify-self: flex-end;
+    transition: .26s ease-out;
+    margin-right: calc(var(--2rem) * 1.8);
+    &:hover{
+        color: var(--LIGHTGRAY2);
+    }
+}
+.eye_op{
+    color: var(--ORANGE) !important;
+}

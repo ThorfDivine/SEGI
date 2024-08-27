@@ -1,0 +1,140 @@
+
+    /* -------------------------------------- THE ERP CSS -------------------------------------- */
+
+/* + FONTS + */
+
+    /*  NAME <-- / -->  @IMPORT */
+
+
+/* + VARIABLES + */
+:root{
+    /* FONTS_ */
+
+    /* COLORS */
+
+    /* SIZES */
+      --IMG_RADIUS: .60em;
+    /* SHADOWS */
+}
+
+/* >> ELEMENTS << */
+
+header{
+    height: 10vh;
+    font-size: 1rem;
+    justify-content: space-between;
+    *{
+        color: var(--WHITE);
+    }
+    .box{
+        margin: 0 4vw;
+    }
+}
+
+  section{
+    height: 100vh;
+  }
+
+/* >> CLASSES ['.'] << */
+.colum{
+  width: 45%;
+  height: 100%;
+}
+
+.conteiner_img{
+width: 90%;
+height: 76%;
+background: linear-gradient(
+              35deg,
+              var(--WHITE),
+              var(--WHITE)
+            ) padding-box,
+            linear-gradient(
+              112deg,
+              #590090,
+              #FE6B00
+            )border-box;
+border-radius: var(--IMG_RADIUS);
+border: 3px solid transparent;
+    img{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: calc(var(--IMG_RADIUS) - .18em);
+    }
+}
+
+.toText{
+    color: var(--WHITE);
+
+    p{
+        text-align: justify;
+    }
+}
+
+/* >> IDS ['#'] << */
+
+#tutorial{
+    width: 50%;
+    height: 5vh;
+    margin-top: 2vh;
+    overflow: hidden;
+    font-size: 1.3rem;
+    position: relative;
+        & p{
+            position: absolute;
+            z-index: 2;
+        }
+}
+#tutorial::before{
+    top: 0;
+    left: -50%;
+    z-index: 1;
+    opacity: 1;
+    content: '';
+    width: 15%;
+    height: 100%;
+    display: flex;
+    border-radius: 4px;
+    align-self: center;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    /* transform: rotate(28deg); */
+    animation: line 10s linear infinite;
+    background: rgba(211, 211, 211, 0.074);
+}
+@keyframes line {
+
+    39%{
+        left: -18%;
+        width: 16%;
+    }
+    40%{
+        left: -18%;
+        width: 16%;
+    }
+    45%{
+      width: 16%;
+    }
+    48%{
+        width: 50%;
+    }
+    58%{
+        width: 150%;
+    }
+    59%{
+        left: -20%;
+    }
+    69%{
+        left: 150%;
+    }
+    70%{
+        left: 150%;
+    }
+    100%{
+        left: 150%;
+    }
+}

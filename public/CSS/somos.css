@@ -1,0 +1,118 @@
+
+    /* -------------------------------------- THE AM CSS -------------------------------------- */
+
+/* + FONTS + */
+
+    /*  NAME <-- / -->  @IMPORT */
+
+
+/* + VARIABLES + */
+:root{
+    /* FONTS_ */
+
+    /* COLORS */
+
+    /* SIZES */
+
+    /* SHADOWS */
+}
+
+/* >> ELEMENTS << */
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+header{
+    height: 10vh;
+    font-size: 1rem;
+    justify-content: space-between;
+    *{
+        color: var(--WHITE);
+    }
+    .box{
+        margin: 0 4vw;
+    }
+}
+section{
+    height: 100vh;
+    justify-content: space-evenly;
+}
+/* >> CLASSES ['.'] << */
+.team{
+    width: 100%;
+    height: 25vh;
+    color: var(--WHITE);
+}
+.person{
+    height: 15vh;
+    display: flex;
+    margin: .44em 1%;
+    overflow: hidden;
+    width:  calc(15vh);
+    transition-delay: .2s;
+    justify-content: space-between;
+    transition: .5s cubic-bezier(0.23, 1, 0.320, 1);
+    &:hover{
+        width: 40%;
+        height: 25vh;
+        .card_img{
+            width: 46%;
+            border-radius: 10px;
+                .prsnNm{
+                    width: 100%;
+                    transform: translateX(0);
+                    border-radius: 0 0 10px 10px;
+                }
+                img{
+                    border-radius: 10px;
+                }
+        }
+        .explain{
+            width: 40%;
+            transform: translateX(0);
+        }
+    }
+}
+.explain{
+    width: 0;
+    height: 0;
+    height: 100%;
+    transition: .5s ease;
+    transform: translateX(100%);
+}
+.card_img{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    position: relative;
+    border-radius: 200px;
+    transition-delay: .3s;
+    align-items: flex-end;
+    justify-content: center;
+    background-color: rgba(238, 255, 0, 0.07);
+    transition: .5s ease-in-out;
+        .prsnNm{
+            height: 30%;
+            display: flex;
+            font-size: .74rem;
+            position: absolute;
+            align-items: center;
+            transition: .5s ease;
+            transition-delay: .4s;
+            justify-content: center;
+            border-radius: 0 0 10px 10px;
+            transform: translateX(-100%);
+            background-color: var(--LIGHTGRAY);
+        }
+        img{
+            width: 100%;
+            height: 100%;
+            border-radius: 200px;
+            transition-delay: .3s;
+            transition: .5s ease-in-out;
+        }
+}
+
+/* >> IDS ['#'] << */
+
