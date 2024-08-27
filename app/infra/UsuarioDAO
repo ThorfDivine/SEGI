@@ -1,0 +1,24 @@
+const connectionFactory = require("./ConnectionFactory");
+
+function UsuarioDAO(connection) {
+    this._connection = connection;
+}
+
+UsuarioDAO.prototype.executaLogin = function (usuario, callback) {
+    
+    const sql = `
+        (SELECT 'professor' AS tipo, nome, materia, rm, email
+         FROM Professores 
+         WHERE rm = ? AND senha = ?)
+        UNION
+        (SELECT 'aluno' AS tipo, nome, serie, rm, email
+         FROM Alunos 
+         WHERE rm = ? AND senha = ?)
+    `;
+        
+    this._connection.query(sql, [usuario.rm, usuario.senha, usuario.rm, usuario.senha], callback);
+};
+
+module.exports = function () {
+    return UsuarioDAO;
+};
